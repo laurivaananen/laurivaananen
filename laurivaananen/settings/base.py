@@ -51,7 +51,8 @@ INSTALLED_APPS = [
 
     'modelcluster',
     'taggit',
-
+    'blog',
+    'wagtailcodeblock',
 ]
 
 MIDDLEWARE = [
@@ -66,7 +67,7 @@ MIDDLEWARE = [
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
-ROOT_URLCONF = 'blog.urls'
+ROOT_URLCONF = 'laurivaananen.urls'
 
 TEMPLATES = [
     {
@@ -84,7 +85,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'blog.wsgi.application'
+WSGI_APPLICATION = 'laurivaananen.wsgi.application'
 
 
 # Database
@@ -139,6 +140,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/static_files/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/media_files/'
 
 LOGGING = {
     'version': 1,

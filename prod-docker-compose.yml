@@ -12,8 +12,8 @@ services:
   web:
     build: .
     environment:
-      - DJANGO_SETTINGS_MODULE=blog.settings.prod
-    command: gunicorn -w 2 blog.wsgi -b 0.0.0.0:8000
+      - DJANGO_SETTINGS_MODULE=laurivaananen.settings.prod
+    command: gunicorn -w 2 laurivaananen.wsgi -b 0.0.0.0:8000
     volumes:
       - .:/code
       - static_files:/static_files

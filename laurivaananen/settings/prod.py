@@ -1,4 +1,4 @@
-from blog.settings.base import *
+from laurivaananen.settings.base import *
 
 DEBUG = False
 

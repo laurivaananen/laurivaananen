@@ -3,6 +3,7 @@ version: '3'
 volumes:
   pgdata:
   static_files:
+  media_files:
 
 services:
   db:
@@ -11,10 +12,13 @@ services:
       - pgdata:/var/lib/postgresql/data
   web:
     build: .
-    command: gunicorn -w 4 blog.wsgi -b 0.0.0.0:8000
+    environment:
+      - DJANGO_SETTINGS_MODULE=laurivaananen.settings.dev
+    command: gunicorn -w 2 laurivaananen.wsgi -b 0.0.0.0:8000
     volumes:
       - .:/code
       - static_files:/static_files
+      - media_files:/media_files
     ports:
       - 8000:8000
     depends_on:
@@ -29,4 +33,5 @@ services:
       - web
     volumes:
       - static_files:/static_files
+      - media_files:/media_files
 
