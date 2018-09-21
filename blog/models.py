@@ -35,7 +35,7 @@ class PortfolioIndexPage(Page):
 class StoryBlock(blocks.StreamBlock):
     h2 = blocks.CharBlock(icon='title')
     paragraph = blocks.RichTextBlock()
-    image = ImageChooserBlock(),
+    image = ImageChooserBlock()
     code = CodeBlock(label='Code')
 
 class PortfolioPage(Page):
