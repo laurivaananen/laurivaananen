@@ -3,6 +3,7 @@ version: '3'
 volumes:
   pgdata:
   static_files:
+  media_files:
 
 services:
   db:
@@ -17,6 +18,7 @@ services:
     volumes:
       - .:/code
       - static_files:/static_files
+      - media_files:/media_files
     ports:
       - 8000:8000
     depends_on:
@@ -31,4 +33,4 @@ services:
       - web
     volumes:
       - static_files:/static_files
-
+      - media_files:/media_files
