@@ -36,6 +36,7 @@ class StoryBlock(blocks.StreamBlock):
     h2 = blocks.CharBlock(icon='title')
     paragraph = blocks.RichTextBlock()
     image = ImageChooserBlock()
+    wide_image = ImageChooserBlock(label='wide image')
     code = CodeBlock(label='Code')
 
 class PortfolioPage(Page):

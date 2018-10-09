@@ -1,23 +1,36 @@
 {% extends 'base.html' %}
 {% load wagtailcore_tags %}
+{% load wagtailimages_tags %} 
 {% include_block page.body %}
 
 {% block content %}
 
-<article>
-    <section>
-        <h1>{{ page.title }}</h1>
-    </section>
-    {% for block in page.body %}
-        {% if block.block_type == 'heading' %}
-            <h1>{{ block.value }}</h1>
-        {% else %}
-            <section class="block-{{ block.block_type }}">
-                {% include_block block %}
-            </section>
-        {% endif %}
-    {% endfor %}
-</article>
+<section>
+    <h1>{{ page.title }}</h1>
+</section>
+{% for block in page.body %}
+    {% if block.block_type == 'heading' %}
+        <h1>{{ block.value }}</h1>
+    {% elif block.block_type == 'image' %}
+        <section class="block-{{ block.block_type }}">
+            {% image block.value original as tmp_photo %}
+            <a href="{{ tmp_photo.url }}">
+                {% image block.value width-960 class="img-responsive" %}
+            </a>
+        </section>
+    {% elif block.block_type == 'wide_image' %}
+        <section class="block-{{ block.block_type }} wide">
+                {% image block.value original as tmp_photo %}
+                <a href="{{ tmp_photo.url }}">
+                    {% image block.value width-1440 class="img-responsive" %}
+                </a>
+        </section>
+    {% else %}
+        <section class="block-{{ block.block_type }}">
+            {% include_block block %}
+        </section>
+    {% endif %}
+{% endfor %}
 
 {% endblock %}
 

@@ -1,20 +1,27 @@
 body {
-    font-family: 'Noto Serif', serif;
+    font-family: 'Nunito', sans-serif;
     display: grid;
     grid-template-rows: 3rem 1fr;
-    grid-template-columns: 1fr minmax(400px, 960px) 1fr;
+    grid-template-columns: 1fr minmax(400px, 1440px) 1fr;
+    line-height: normal;
 }
 
 h1 {
     font-size: 2em;
+    font-weight: 600;
+    padding-bottom: 1em;
 }
 
 h2 {
     font-size: 1.5em;
+    font-weight: 600;
+    padding-bottom: 1em;
 }
 
 h3 {
     font-size: 1.17em;
+    font-weight: 500;
+    padding-bottom: 1em;
 }
 
 nav {
@@ -36,21 +43,48 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
+    font-weight: 600;
     color: #000;
 }
 
 nav ul li a:hover {
     color: rgb(255, 72, 0);
+    border-bottom: 2px solid rgb(255, 72, 0);
 }
 
 main {
     grid-column: 2 / 3;
     grid-row: 2 / -1;
-    padding: 10rem 0;
     display: grid;
+    grid-template-columns: 1fr minmax(400px, 960px) 1fr;
+    grid-auto-rows: auto;
+    padding: 10rem 0;
     grid-row-gap: 2rem;
 }
 
-main article section {
-    margin-bottom: 2em;
+main section {
+    grid-column: 2 / 3;
+}
+
+main section.wide {
+    grid-column: 1 / -1;
+}
+
+main a {
+    color: rgb(0, 140, 255);
+    text-decoration: none;
+}
+
+main a:hover {
+    color: rgb(255, 72, 0);
+}
+
+img.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+main ul {
+    list-style-type: circle;
+    margin-left: 2em;
 }

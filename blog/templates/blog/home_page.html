@@ -5,14 +5,15 @@
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
-    <h1>{{ page.title }}</h1>
+    <section>
+        <h1>{{ page.title }}</h1>
 
-    <div class='intro'>{{ page.intro|richtext }}</div>
+        <p>Welcome to my website. Here you can find my portfolio and blog.</p>
 
-    <h2>Blog posts:</h2>
-    {% for post in page.get_children %}
-        <h2><a href='{% pageurl post %}'>{{ post.title }}</a></h2>
-    {% endfor %}
-
+        <h2>Browse Categories:</h2>
+        {% for post in page.get_children %}
+            <h2><a href='{% pageurl post %}'>{{ post.title }}</a></h2>
+        {% endfor %}
+    </section>
 {% endblock %}
 
