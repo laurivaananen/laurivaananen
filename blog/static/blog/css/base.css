@@ -9,19 +9,22 @@ body {
 h1 {
     font-size: 2em;
     font-weight: 600;
-    padding-bottom: 1em;
+    padding-top: 1em;
+    color: rgb(255, 72, 0);
 }
 
 h2 {
     font-size: 1.5em;
     font-weight: 600;
-    padding-bottom: 1em;
+    padding-top: 1em;
+    color: rgb(255, 72, 0);
 }
 
 h3 {
     font-size: 1.17em;
     font-weight: 500;
-    padding-bottom: 1em;
+    padding-top: 1em;
+    color: rgb(255, 72, 0);
 }
 
 nav {
@@ -58,7 +61,7 @@ main {
     display: grid;
     grid-template-columns: 1fr minmax(400px, 960px) 1fr;
     grid-auto-rows: auto;
-    padding: 10rem 0;
+    padding: 10rem 0 15rem 0;
     grid-row-gap: 2rem;
 }
 
@@ -82,6 +85,11 @@ main a:hover {
 img.img-responsive {
     max-width: 100%;
     height: auto;
+}
+
+img.img-tall-responsive {
+    width: auto;
+    max-width: 1080px;
 }
 
 main ul {
